@@ -1,0 +1,27 @@
+.container1 {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+}
+
+.page, .bookmark {
+  width: 11%;
+  min-width: 130px;
+  padding: 1.3rem;
+  border: 2px solid;
+  text-align: center;
+}
+
+.page {
+  border-radius: 10px 0 0 10px;
+}
+.bookmark {
+  border-radius: 0 10px 10px 0;
+}

@@ -7,14 +7,18 @@ const path = require('path')
 const config = {
   entry: [
     'react-hot-loader/patch',
-    './src/app.js'
+    './src/index.js'
   ],
   module: {
-  rules: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
       }
     ]
   },
