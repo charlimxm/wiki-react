@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './styles/app.css'
 import Page from './page'
 import Bookmark from './bookmark'
+import icon from './styles/icon.png'
 
 const grey = '#CDCDCD'
 const blue = '#0BB5FF'
@@ -10,9 +11,9 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      pageColor: grey,
+      pageColor: blue,
       bookmarkColor: grey,
-      showPage: false,
+      showPage: true,
       showBookmark: false
     }
     this.viewPageList = this.viewPageList.bind(this)
@@ -41,13 +42,15 @@ class App extends Component {
 
   render () {
     return (
-      <div>
-        <p>Mini Wikipedia</p>
+      <div className='mainContainer'>
+        <div className='logo'>
+          <img src={icon} alt='Logo' height='60' />
+          <h1>Mini Wikipedia</h1>
+        </div>
 
         <div className='container1'>
-
           <div
-            className='page'
+            id='page'
             style={{borderColor: this.state.pageColor, color: this.state.pageColor}}
             onClick={this.viewPageList}
           >
@@ -55,7 +58,7 @@ class App extends Component {
           </div>
 
           <div
-            className='bookmark'
+            id='bookmark'
             style={{borderColor: this.state.bookmarkColor, color: this.state.bookmarkColor}}
             onClick={this.viewBookmarkList}
           >
