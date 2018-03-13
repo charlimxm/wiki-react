@@ -1,3 +1,9 @@
+body {
+  background-color: #FFCC00;
+  padding: 20px;
+  margin: 0;
+}
+
 .logo > img {
   display: inline-block;
   align-items: center;
@@ -5,29 +11,43 @@
   padding-left: 5px;
 }
 
-.logo > h1 {
+.logo > p {
   display: inline-block;
   vertical-align: middle;
   padding-left: 12px;
+  font-size: 38px;
+  font-weight: bold;
 }
 
-.container1 {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: left;
+.nav {
+  background-color: #111;
+  padding: 0;
 }
 
-#page, #bookmark {
-  width: 50%;
-  min-width: 130px;
-  padding: 0.8rem;
-  border: 2px solid;
-  text-align: center;
-  font-size: 20px;
+.nav > li {
+  display: inline;
+  list-style-type: none;
+  font-size: 25px;
+}
+
+.nav li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px calc((100% - 185px)/4);
+  display: inline-block;
+}
+
+.active {
+  background-color: #0099FF;
+}
+
+.content {
+  background-color: #FFF;
 }
 
 .randomPagesContainer > li {
   padding: 15px 0px 10px 40px;
   font-size: 30px;
+  font-weight: bold;
 }

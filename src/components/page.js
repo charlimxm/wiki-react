@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Route, Link, BrowserRouter } from 'react-router-dom'
+import Detail from './detail'
 
 class Page extends Component {
   constructor (props) {
@@ -22,12 +24,12 @@ class Page extends Component {
       })
       .then(data => data.json())
       .then(data => {
-        let pageTitles = []
-        for (var i = 0; i < 10; i++) {
-          pageTitles.push(<li id={(Object.values(data.query.pages))[i].pageid}><strong>{(Object.values(data.query.pages))[i].title}</strong></li>)
-        }
+        // let pageTitles = []
+        // for (var i = 0; i < 10; i++) {
+        //   pageTitles.push(<li key={(Object.values(data.query.pages))[i].pageid}><Link to={`/page/${(Object.values(data.query.pages))[i].pageid}`}>{(Object.values(data.query.pages))[i].title}</Link></li>)
+        // }
         this.setState({
-          pages: pageTitles
+          pages: Object.values(data.query.pages)
         })
         console.log(this.state.pages)
       }, () => {
@@ -39,8 +41,22 @@ class Page extends Component {
 
   render () {
     return (
-      <div className='randomPagesContainer'>
-        {this.state.pages}
+      <div>
+        <BrowserRouter>
+          <div>
+            <ul className='randomPagesContainer'>
+              {this.state.pages.map(({ pageid, title }) => (
+                <li key={pageid}>
+                  <Link to={`/${pageid}`}>{title}</Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className='content'>
+              <Route path={`/:pageId`} component={Detail} />
+            </div>
+          </div>
+        </BrowserRouter>
       </div>
     )
   }
