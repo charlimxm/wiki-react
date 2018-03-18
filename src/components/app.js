@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, NavLink, BrowserRouter } from 'react-router-dom'
 import Page from './page'
 import Bookmark from './bookmark'
+import Detail from './detail'
 import icon from './styles/icon.png'
 import './styles/app.css'
 
@@ -21,7 +22,7 @@ class App extends Component {
               <li><NavLink to='/bookmarks'>Bookmarks</NavLink></li>
             </ul>
 
-            <div className='content'>
+            <div>
               <Route exact path='/' component={Page} />
               <Route path='/bookmarks' component={Bookmark} />
             </div>

@@ -4,8 +4,8 @@ class Bookmark extends Component {
 
   render () {
     return (
-      <div>
-          <h1>Bookmark</h1>
+      <div className="bookmark">
+        <h1>Bookmark</h1>
       </div>
     )
   }

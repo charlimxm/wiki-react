@@ -24,10 +24,6 @@ class Page extends Component {
       })
       .then(data => data.json())
       .then(data => {
-        // let pageTitles = []
-        // for (var i = 0; i < 10; i++) {
-        //   pageTitles.push(<li key={(Object.values(data.query.pages))[i].pageid}><Link to={`/page/${(Object.values(data.query.pages))[i].pageid}`}>{(Object.values(data.query.pages))[i].title}</Link></li>)
-        // }
         this.setState({
           pages: Object.values(data.query.pages)
         })
@@ -41,19 +37,19 @@ class Page extends Component {
 
   render () {
     return (
-      <div>
+      <div className='page'>
         <BrowserRouter>
-          <div>
-            <ul className='randomPagesContainer'>
+          <div className='pagesContainer'>
+            <ol className="rounded-list">
               {this.state.pages.map(({ pageid, title }) => (
                 <li key={pageid}>
-                  <Link to={`/${pageid}`}>{title}</Link>
+                  <Link exact to={`/${pageid}`}>{title}</Link>
                 </li>
               ))}
-            </ul>
+            </ol>
 
-            <div className='content'>
-              <Route path={`/:pageId`} component={Detail} />
+            <div className="details">
+              <Route exact path={`/:pageId`} component={Detail} />
             </div>
           </div>
         </BrowserRouter>
