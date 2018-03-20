@@ -2,6 +2,8 @@ body {
   background-color: #FFCC00;
 }
 
+/*-------------------------- Header --------------------------*/
+
 .logo {
   height: 80px;
 }
@@ -21,6 +23,8 @@ body {
   font-weight: bold;
 }
 
+/*-------------------------- Nav --------------------------*/
+
 .nav {
   background-color: #111;
   padding: 0;
@@ -36,39 +40,33 @@ body {
   color: #FFF;
   font-weight: bold;
   text-decoration: none;
-  padding: 20px calc((100% - 185px)/4);
+  padding: 20px calc((100% - 175px)/4);
   display: inline-block;
 }
 
-.active {
+a.active {
   background-color: #0099FF;
 }
 
-.pagesContainer ,.details, .bookmark {
-  background-color: #FFF;
-}
+/*-------------------------- Content --------------------------*/
 
-.pagesContainer {
-  height: 425px;
+.page ,.details, .bookmark {
+  background-color: #FFF;
+  padding: 20px;
 }
 
 ol {
   counter-reset: li; /* Initiate a counter */
   list-style: none; /* Remove default numbering */
   font: 15px 'trebuchet MS', 'lucida sans';
-  padding: 20px;
   margin-bottom: 4em;
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 
-ol > li {
-  padding-left: 5px
-}
-
-.rounded-list a {
+.rounded-list a, .categories > li {
   position: relative;
   display: block;
-  padding: .4em .4em .5em 2.5em;
+  padding: .4em .4em .5em .6em;
   margin: .5em 0;
   background: #ddd;
   color: #444;
@@ -89,7 +87,7 @@ ol > li {
   content: counter(li);
   counter-increment: li;
   position: absolute;
-  left: -1.3em;
+  left: -3em;
   top: 50%;
   margin-top: -1.3em;
   background: #87ceeb;
@@ -103,19 +101,12 @@ ol > li {
   transition: all .3s ease-out;
 }
 
-.details {
-  font: 'trebuchet MS', 'lucida sans';
-  padding: 5px 20px 20px 20px;
-  position: relative;
-  top: -20%;
-}
-
 .details > div > img {
   margin: 10px 15px 10px 15px;
   border: 1px solid;
 }
 
-.details > button {
+button {
   padding: 10px;
   font-size: 15px;
   border: 2px solid black;

@@ -1,9 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/app';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { Router, browserHistory } from 'react-router'
+import routes from './routes'
+import configureStore from './store/configureStore'
+import './styles/styles.css'
+import { syncHistoryWithStore } from 'react-router-redux'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'));
+const store = configureStore()
 
-module.hot.accept()
+const history = syncHistoryWithStore(browserHistory, store)
+
+render(
+  <Provider store={store}>
+    <Router history={history} routes={routes} />
+  </Provider>, document.getElementById('root')
+)

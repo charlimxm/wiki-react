@@ -1,17 +1,14 @@
-```
-.
-├── package.json
-├── dist
-│   └── index.html
-├── src
-│   └── app.js
-├── .babelrc
-└── webpack.config.js
-```
+**To run**
+* git clone https://github.com/charlimxm/wiki-react
+* cd wiki-react
+* npm install
+* npm start
 
-**Steps**
-* Setting up project without create-react-app
-
-**Resources**
-* https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-* https://www.kirupa.com/react/creating_single_page_app_react_using_react_router.htm
+**Technologies used**
+* React.js
+* Redux
+* React Router
+* ES6
+* Babel
+* Webpack
+* Local Storage (Web Storage)
