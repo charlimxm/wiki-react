@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Bookmarks from '../components/Bookmarks'
-import { removeBookmark } from '../actions/actions'
+import { removeBookmark } from '../actions/index'
 
 class BookmarkContainer extends Component {
   render () {

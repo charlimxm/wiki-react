@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addBookmark, removeBookmark } from '../actions/actions'
+import { addBookmark, removeBookmark } from '../actions/index'
 
 class BookmarkButton extends Component {
   render () {

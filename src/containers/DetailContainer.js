@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { reqPageDetails } from '../actions/actions'
+import { reqPageDetails } from '../actions/index'
 import { browserHistory } from 'react-router'
 import Detail from '../components/Detail'
 import BookmarkButton from '../containers/BookmarkButton'
